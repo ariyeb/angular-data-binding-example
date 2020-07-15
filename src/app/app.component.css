@@ -1,0 +1,49 @@
+button {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+}
+
+button:focus,
+button:active {
+  border: none;
+}
+
+input {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+}
+
+.mouse-div {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.red-background {
+  background: red;
+}
+
+.blue-background {
+  background: blue;
+}
+
+.yellow-background {
+  background: yellow;
+}
+
+.blue-border {
+  border: 2px solid blue;
+}
+
+.email-not-valid {
+  border: 1px solid red;
+}
+
+.red-text {
+  color: red;
+}
