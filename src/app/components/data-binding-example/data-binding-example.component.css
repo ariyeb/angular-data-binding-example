@@ -1,0 +1,99 @@
+button {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+}
+
+button:focus,
+button:active {
+  border: none;
+}
+
+input {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+}
+
+.mouse-div {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.red-background {
+  background: red;
+}
+
+.blue-background {
+  background: blue;
+}
+
+.yellow-background {
+  background: yellow;
+}
+
+.blue-border {
+  border: 2px solid blue;
+}
+
+.email-not-valid {
+  border: 1px solid red;
+}
+
+.red-text {
+  color: red;
+}
+
+.board {
+  height: 80vh;
+  width: 80vh;
+  margin: 20px auto;
+  outline: 5px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square__black {
+  background: black;
+}
+
+.square__white {
+  background: white;
+}
+
+.piece {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: blue;
+}
+
+.full {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.hollow {
+  width: 100px;
+  height: 100px;
+  border: 10px solid blue;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border: 10px solid yellow;
+  border-radius: 50%;
+}

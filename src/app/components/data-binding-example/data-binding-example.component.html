@@ -1,0 +1,85 @@
+<!-- String interpolation -->
+<h1>{{title + ": "+ returnHelloWorld()}}</h1>
+
+<!-- Property Binding -->
+<input type="text" [placeholder]="inputPlaceHolder" />
+<button [disabled]="isButtonDisabled">button {{isButtonDisabled? 'disabled': 'enabled'}}</button>
+
+<!-- Event Binding -->
+<button (click)="onclickButtonEnable()">{{isButtonDisabled?'enable': 'disable'}} top button</button>
+<input placeholder="Enter Title" (input)="onInputInputTitle($event)" />
+
+<!--
+  צרו ריבוע באורך ורוחב של 300 פיקסלים
+  בתוך הריבוע צריך להיות כתוב המיקום של העכבר בתוך הריבוע
+ -->
+<div class="mouse-div" (mousemove)="onMousemoveInMouseDiv($event)">x: {{mouseDivX}}; y: {{mouseDivY}}</div>
+
+<!-- Two way binding -->
+<input placeholder="Change Title" [(ngModel)]="title" />
+
+<!-- ngClass -->
+<!-- <button [disabled]="isButtonDisabled" [ngClass]="buttonClasses">
+  button {{isButtonDisabled? 'disabled': 'enabled'}}
+</button> -->
+
+<!-- צרו כפתור: לחיצה 1- רקע צהוב, לחיצה 2 - גבול אדוםת לחיצה 3 טקסט אדום לחיצה רביעית מאפסת את המצב של הכפתור -->
+<!-- <button (click)="onClickButtonCounter()" [ngClass]="buttonCounterClasses">Click on me: {{buttonCounter}}</button> -->
+
+<!-- ngIf -->
+<div *ngIf="!isButtonDisabled" style="background: blue;width: 100px; height: 100px;"></div>
+<div style="background: red;width: 100px; height: 100px;"></div>
+
+
+<!--
+  תרגיל:
+  צרו אינפוט של אימייל שברגע שמקלידים בו אימייל לא תקין אז נוספת פסקה מתחת שמודיעה שהאימייל איננו תקין ומסביב לאינפוט יש מסגרת אדומה
+ -->
+
+<input placeholder="Email" [class]="isEmailValid? '':'email-not-valid'" (input)="onInputInInputEmail($event)" />
+<div *ngIf="!isEmailValid">Email not Valid !!!!!!</div>
+
+<!-- ngFor -->
+<div *ngFor="let person of persons; let i=index">
+  person #{{i}}: name: {{person.name}}; age: {{person.age}}
+  <p>{{person.name}}</p>
+</div>
+
+<!-- Template reference variable -->
+<input #message type="text" />
+<button (click)="onClickAddMessage(message)">Add message</button>
+<p *ngFor="let message of messages; let i = index">{{message}}</p>
+<p *ngIf="messages.length === 0">No messages</p>
+
+<!--
+  צרו לוח של דמקה שמונה על שמונה
+  באמצעות מערך אחד
+  צרו פונקציה שמודיעה האם המשבצת אמורה להיות שחורה או לבנה.
+  אם לוחצים על משבצת שחורה מופיע כלי במשבצת ואם לוחצים שוב הכלי נעלים.
+ -->
+
+<div class="board">
+  <div class="square" [ngClass]="isSquareBlack(i) ? 'square__black': 'square__white'"
+    *ngFor="let square of squares; let i = index" (click)="onClickSquare(i)">
+    <div *ngIf="square.isPieceExist" class="piece"></div>
+  </div>
+</div>
+
+
+<!-- ngSwitch -->
+
+<select (change)="onChangeSelect($event)">
+  <option value="full">Full square</option>
+  <option value="hollow">Hollow Square</option>
+  <option value="circle">Circle</option>
+</select>
+<div [ngSwitch]="selectValue">
+  <div class="full" *ngSwitchCase="'full'"></div>
+  <div class="hollow" *ngSwitchCase="'hollow'"></div>
+  <div class="circle" *ngSwitchCase="'circle'"></div>
+</div>
+
+<!--
+  ngSwitch
+
+ -->
