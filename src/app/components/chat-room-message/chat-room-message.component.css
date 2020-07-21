@@ -1,0 +1,16 @@
+.message {
+  margin: 1rem;
+  background: white;
+  border: 2px solid #118AB2;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.username {
+  font-weight: 700;
+  margin: 1rem;
+}
+
+.content {
+  margin: 1rem;
+}
