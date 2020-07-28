@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="private-message">
+    <h4>Private message</h4>
+    <div class="username">To: {{user.userName}}</div>
+    <textarea
+      class="message"
+      rows="5"
+      placeholder="Write a message"
+    ></textarea>
+    <button
+      class="button-send"
+      type="button"
+      (click)="onClickButtonSend()"
+    >Send</button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<form
+  #stamForm="ngForm"
+  (submit)="onSubmit(stamForm)"
+>
+  <input
+    name="username"
+    type="text"
+    [(ngModel)]="userName"
+    #username="ngModel"
+    required
+  />
+  <div *ngIf="username.touched && username.invalid">
+    You must enter username
+  </div>
+  <input
+    name="password"
+    type="password"
+    [(ngModel)]="Password"
+    #password="ngModel"
+    required
+  />
+  <div *ngIf="password.touched && password.invalid">
+    You must enter password
+  </div>
+  <button
+    type="submit"
+    [disabled]="stamForm.invalid"
+  >Submit</button>
+</form>

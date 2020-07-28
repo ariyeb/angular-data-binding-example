@@ -1,5 +1,23 @@
 <div>
   <h3>Users</h3>
   <app-chat-room-users-search (users_to_display)="onUsersSearch($event)"></app-chat-room-users-search>
-  <div *ngFor="let user of usersToDisplay" class="user">{{user.userName}}</div>
+  <div
+    *ngFor="let user of usersToDisplay; let i = index"
+    class="user"
+    (click)="onClickUser(i)"
+  >{{user.userName}}</div>
 </div>
+<app-private-message
+  *ngIf="isPrivateMessage"
+  [user]="privateMessageUser"
+  (sendMessage)="onSendPrivateMessage()"
+></app-private-message>
+
+<!--
+
+  צרו קומפוננט של הודעה אישית לאחד היוזרים האחרים כאשר לוחצים עליו
+  הקומפוננט כולל את שם היוזר
+  ושדה של אינפוט
+  וכפתור send
+  כאשר לוחצים על הכפתור המודל של ההודעה נעלם.
+ -->

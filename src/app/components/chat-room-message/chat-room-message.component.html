@@ -1,4 +1,14 @@
-<div class="message">
+<div
+  class="message"
+  [ngClass]="messageClass"
+>
+  <div
+    class="delete"
+    *ngIf="isMyMessage"
+    (click)="onClickDelete()"
+  >
+    x
+  </div>
   <div class="username">{{message.user.userName}}</div>
   <div class="content">{{message.message}}</div>
 </div>

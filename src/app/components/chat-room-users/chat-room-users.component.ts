@@ -9,6 +9,8 @@ import { User } from 'src/app/models/user.model';
 export class ChatRoomUsersComponent implements OnInit {
   @Input() users: User[]
   usersToDisplay: User[]
+  privateMessageUser: User
+  isPrivateMessage: boolean = false
 
   constructor() { }
 
@@ -18,6 +20,15 @@ export class ChatRoomUsersComponent implements OnInit {
 
   onUsersSearch(users: string) {
     this.usersToDisplay = this.users.filter(user => user.userName.includes(users))
+  }
+
+  onClickUser(index) {
+    this.privateMessageUser = this.users[index]
+    this.isPrivateMessage = true
+  }
+
+  onSendPrivateMessage() {
+    this.isPrivateMessage = false
   }
 
 }

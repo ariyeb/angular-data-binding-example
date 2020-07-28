@@ -1,0 +1,42 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(192, 192, 192, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.private-message {
+  display: block;
+  width: 40vw;
+  min-height: 30vh;
+  border: 2px solid #118AB2;
+  border-radius: 5px;
+  background: white;
+  padding: 1rem;
+  z-index: 11;
+}
+
+.username {
+  font-weight: 700;
+}
+
+.message {
+  width: 100%;
+  resize: none;
+  padding: 0.5rem;
+}
+
+.button-send {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  background: #118AB2;
+  border: none;
+  width: 20%;
+}

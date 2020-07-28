@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Message } from 'src/app/models/message.model';
 
 @Component({
@@ -7,10 +7,22 @@ import { Message } from 'src/app/models/message.model';
   styleUrls: ['./chat-room-message.component.css']
 })
 export class ChatRoomMessageComponent implements OnInit {
-  @Input() message: Message
+  @Input() message: Message;
+  @Input() myUserId: string;
+  @Output() delete = new EventEmitter()
+  isMyMessage: boolean
+  messageClass = ""
   constructor() { }
 
   ngOnInit(): void {
+    this.isMyMessage = this.myUserId === this.message.user.id
+    if (this.isMyMessage) {
+      this.messageClass = 'my-message'
+    }
+  }
+
+  onClickDelete() {
+    this.delete.emit()
   }
 
 }

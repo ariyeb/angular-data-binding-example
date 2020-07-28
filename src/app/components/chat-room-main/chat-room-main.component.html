@@ -2,17 +2,11 @@
   <div>
     <h3>Chat room</h3>
     <app-chat-room-message
-      *ngFor="let message of messages"
+      *ngFor="let message of messages; let i = index"
       [message]="message"
+      [myUserId]="myUser.id"
+      (delete)="onDeleteMessage(i)"
     ></app-chat-room-message>
   </div>
   <app-chat-room-send-message (newMessage)="onNewMessage($event)"></app-chat-room-send-message>
 </div>
-<!--
-  צרו קומפוננט של הוספת הודעה
-  כוללת אינפוט וכפתור
-  כל פעם שלוחצים על הכפתור נוספת הודעה חדשה ל
-  main
-  הקומפוננט נמצא בתחתית ההודעות
-
- -->

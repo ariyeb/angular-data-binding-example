@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule , ReactiveFormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { DataBindingExampleComponent } from './components/data-binding-example/data-binding-example.component';
@@ -12,6 +12,9 @@ import { ChatRoomMainComponent } from './components/chat-room-main/chat-room-mai
 import { ChatRoomMessageComponent } from './components/chat-room-message/chat-room-message.component';
 import { ChatRoomUsersSearchComponent } from './components/chat-room-users-search/chat-room-users-search.component';
 import { ChatRoomSendMessageComponent } from './components/chat-room-send-message/chat-room-send-message.component';
+import { PrivateMessageComponent } from './components/private-message/private-message.component';
+import { NgmodelFormComponent } from './components/ngmodel-form/ngmodel-form.component';
+import { SubscribeFormComponent } from './components/subscribe-form/subscribe-form.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,15 @@ import { ChatRoomSendMessageComponent } from './components/chat-room-send-messag
     ChatRoomMainComponent,
     ChatRoomMessageComponent,
     ChatRoomUsersSearchComponent,
-    ChatRoomSendMessageComponent
+    ChatRoomSendMessageComponent,
+    PrivateMessageComponent,
+    NgmodelFormComponent,
+    SubscribeFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

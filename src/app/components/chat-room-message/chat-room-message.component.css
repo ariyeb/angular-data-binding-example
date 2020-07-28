@@ -4,6 +4,7 @@
   border: 2px solid #118AB2;
   border-radius: 5px;
   width: 80%;
+  position: relative;
 }
 
 .username {
@@ -13,4 +14,20 @@
 
 .content {
   margin: 1rem;
+}
+
+.my-message {
+  background: #FFD166;
+}
+
+.delete {
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+}
+
+.delete:hover{
+  color: white;
+  cursor: pointer;
 }

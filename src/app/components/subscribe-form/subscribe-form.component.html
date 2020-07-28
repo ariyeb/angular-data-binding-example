@@ -1,0 +1,56 @@
+<!-- <h1>{{inputTitle.value}}</h1>
+<input
+  type="text"
+  [formControl]="inputTitle"
+/>
+<button (click)="onClickButtonDefault()">default</button> -->
+<div class="container">
+  <div class="form">
+    <form [formGroup]="subscribeForm">
+      <input
+        type="text"
+        class="input-text"
+        placeholder="First name"
+        formControlName="firstName"
+      />
+      <div *ngIf="firstName.touched && firstName.invalid">You must enter first name</div>
+      <input
+        type="text"
+        class="input-text"
+        placeholder="Last name"
+        formControlName="lastName"
+      />
+      <input
+        type="number"
+        class="input-text"
+        placeholder="Age"
+        formControlName="age"
+      />
+      <input
+        type="text"
+        class="input-text"
+        placeholder="Email"
+        formControlName="email"
+      >
+      <input
+        type="password"
+        class="input-text"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <input
+        type="password"
+        class="input-text"
+        placeholder="Repeat on password"
+        formControlName="passwordRepeated"
+      />
+      <input
+        type="checkbox"
+        class="inline-block"
+        formControlName="terms"
+      >
+      <div class="inline-block">I read the terms</div>
+      <button [disabled]="subscribeForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>
