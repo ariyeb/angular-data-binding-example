@@ -11,6 +11,7 @@ import { ChatRoomUsersComponent } from './components/chat-room-users/chat-room-u
 import { ChatRoomMainComponent } from './components/chat-room-main/chat-room-main.component';
 import { ChatRoomMessageComponent } from './components/chat-room-message/chat-room-message.component';
 import { ChatRoomUsersSearchComponent } from './components/chat-room-users-search/chat-room-users-search.component';
+import { ChatRoomSendMessageComponent } from './components/chat-room-send-message/chat-room-send-message.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ChatRoomUsersSearchComponent } from './components/chat-room-users-searc
     ChatRoomUsersComponent,
     ChatRoomMainComponent,
     ChatRoomMessageComponent,
-    ChatRoomUsersSearchComponent
+    ChatRoomUsersSearchComponent,
+    ChatRoomSendMessageComponent
   ],
   imports: [
     BrowserModule,
