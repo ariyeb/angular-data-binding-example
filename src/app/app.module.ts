@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule , ReactiveFormsModule} from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DataBindingExampleComponent } from './components/data-binding-example/data-binding-example.component';
@@ -15,6 +16,7 @@ import { ChatRoomSendMessageComponent } from './components/chat-room-send-messag
 import { PrivateMessageComponent } from './components/private-message/private-message.component';
 import { NgmodelFormComponent } from './components/ngmodel-form/ngmodel-form.component';
 import { SubscribeFormComponent } from './components/subscribe-form/subscribe-form.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { SubscribeFormComponent } from './components/subscribe-form/subscribe-fo
     ChatRoomSendMessageComponent,
     PrivateMessageComponent,
     NgmodelFormComponent,
-    SubscribeFormComponent
+    SubscribeFormComponent,
+    RoomsComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
