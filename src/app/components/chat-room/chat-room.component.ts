@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { Message } from 'src/app/models/message.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chat-room',
@@ -8,6 +9,7 @@ import { Message } from 'src/app/models/message.model';
   styleUrls: ['./chat-room.component.css']
 })
 export class ChatRoomComponent implements OnInit {
+  roomName: string
   myUser: User = {
     userName: 'Ariye',
     id: '11'
@@ -48,9 +50,12 @@ export class ChatRoomComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.roomName = params.get('name')
+    })
   }
 
 }

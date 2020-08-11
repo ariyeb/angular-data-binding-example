@@ -10,6 +10,7 @@ import { User } from 'src/app/models/user.model';
 export class ChatRoomMainComponent implements OnInit {
   @Input() messages: Message[]
   @Input() myUser: User
+  @Input() roomName: string
   constructor() { }
 
   ngOnInit(): void {

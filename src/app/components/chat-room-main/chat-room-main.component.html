@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <h3>Chat room</h3>
+    <h3>Topic: {{roomName}}</h3>
     <app-chat-room-message
       *ngFor="let message of messages; let i = index"
       [message]="message"
