@@ -20,6 +20,7 @@ import { RoomsComponent } from './components/rooms/rooms.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { UserEntranceComponent } from './components/user-entrance/user-entrance.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UserEntranceComponent } from './components/user-entrance/user-entrance.
     RoomsComponent,
     HomeComponent,
     PageNotFoundComponent,
-    UserEntranceComponent
+    UserEntranceComponent,
+    LoginFormComponent
   ],
   imports: [
     AppRoutingModule,

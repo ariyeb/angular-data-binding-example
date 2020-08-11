@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ChatRoomComponent } from './components/chat-room/chat-room.component'
 import { UserEntranceComponent } from './components/user-entrance/user-entrance.component'
 import { SubscribeFormComponent } from './components/subscribe-form/subscribe-form.component'
+import { LoginFormComponent } from './components/login-form/login-form.component'
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'room/:name', component: ChatRoomComponent },
   {
     path: 'user', component: UserEntranceComponent, children: [
-      {path: '', component}
+      { path: '', component: LoginFormComponent },
       { path: 'subscribe', component: SubscribeFormComponent }
     ]
   },
