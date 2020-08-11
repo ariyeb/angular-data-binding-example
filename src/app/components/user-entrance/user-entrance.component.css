@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  margin-top: 4rem;
+}
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form {
+  width: 40%;
+  border: 2px solid #118AB2;
+  border-radius: 5px;
+  margin: 2rem;
+  padding: 1rem;
+}

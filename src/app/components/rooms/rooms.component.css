@@ -38,3 +38,35 @@ a {
 .room:hover {
   background: #ccc;
 }
+
+.input-newroom {
+  display: block;
+  width: 100%;
+  border: 1px solid #118AB2;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  box-shadow: none;
+}
+
+.input-newroom:focus,
+.input-newroom:active {
+  border: 1px solid #118AB2;
+  outline: none;
+}
+
+.button-newroom {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  background: #118AB2;
+  border: none;
+  width: 100%;
+  display: block;
+}
+
+.button-newroom:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

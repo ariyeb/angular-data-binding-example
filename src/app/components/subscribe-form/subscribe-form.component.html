@@ -4,106 +4,103 @@
   [formControl]="inputTitle"
 />
 <button (click)="onClickButtonDefault()">default</button> -->
-<div class="container">
-  <div class="form">
-    <form
-      [formGroup]="subscribeForm"
-      (ngSubmit)="onSubmitSubscribeForm()"
-    >
-      <input
-        type="text"
-        class="input-text"
-        [ngClass]="firstName.touched && firstName.invalid ? 'input-text__inavlid' : ''"
-        placeholder="First name"
-        formControlName="firstName"
-      />
-      <div
-        *ngIf="firstName.touched && firstName.invalid"
-        class="invalid-message"
-      >{{invalidFirstNameMessage()}}</div>
-      <input
-        type="text"
-        class="input-text"
-        [ngClass]="lastName.touched && lastName.invalid ? 'input-text__inavlid' : ''"
-        placeholder="Last name"
-        formControlName="lastName"
-      />
-      <div
-        class="invalid-message"
-        *ngIf="lastName.touched && lastName.invalid"
-      >
-        You must enter last name
-      </div>
-      <input
-        type="number"
-        class="input-text"
-        [ngClass]="age.touched && age.invalid ? 'input-text__inavlid' : ''"
-        placeholder="Age"
-        formControlName="age"
-      />
-      <div
-        class="invalid-message"
-        *ngIf="age.touched && age.invalid"
-      >
-        {{invalidAgeMessage()}}
-      </div>
-      <input
-        type="text"
-        class="input-text"
-        [ngClass]="email.touched && email.invalid ? 'input-text__inavlid' : ''"
-        placeholder="Email"
-        formControlName="email"
-      >
-      <div
-        class="invalid-message"
-        *ngIf="email.touched && email.invalid"
-      >
-        You must enter email
-      </div>
-      <input
-        type="password"
-        class="input-text"
-        [ngClass]="password.touched && password.invalid ? 'input-text__inavlid' : ''"
-        placeholder="Password"
-        formControlName="password"
-      />
-      <div
-        class="invalid-message"
-        *ngIf="password.touched && password.invalid"
-      >
-        {{invalidPsswordMessage()}}
-      </div>
-      <input
-        type="password"
-        class="input-text"
-        [ngClass]="passwordRepeated.touched && (passwordRepeated.invalid || subscribeForm.errors?.passwordnotrepeated) ? 'input-text__inavlid' : ''"
-        placeholder="Repeat on password"
-        formControlName="passwordRepeated"
-      />
-      <div
-        class="invalid-message"
-        *ngIf="passwordRepeated.touched && (passwordRepeated.invalid || subscribeForm.errors?.passwordnotrepeated)"
-      >
-        {{invalidPsswordRepeatedMessage()}}
-      </div>
-      <input
-        type="checkbox"
-        class="inline-block"
-        formControlName="terms"
-      >
-      <div class="inline-block">I read the terms</div>
-      <div
-        class="invalid-message"
-        *ngIf="terms.touched && terms.errors?.required === true"
-      >
-        You must sign the terms
-      </div>
-      <button
-        class="button-submit"
-        [disabled]="subscribeForm.invalid"
-      >
-        Submit
-      </button>
-    </form>
+
+<form
+  [formGroup]="subscribeForm"
+  (ngSubmit)="onSubmitSubscribeForm()"
+>
+  <input
+    type="text"
+    class="input-text"
+    [ngClass]="firstName.touched && firstName.invalid ? 'input-text__inavlid' : ''"
+    placeholder="First name"
+    formControlName="firstName"
+  />
+  <div
+    *ngIf="firstName.touched && firstName.invalid"
+    class="invalid-message"
+  >{{invalidFirstNameMessage()}}</div>
+  <input
+    type="text"
+    class="input-text"
+    [ngClass]="lastName.touched && lastName.invalid ? 'input-text__inavlid' : ''"
+    placeholder="Last name"
+    formControlName="lastName"
+  />
+  <div
+    class="invalid-message"
+    *ngIf="lastName.touched && lastName.invalid"
+  >
+    You must enter last name
   </div>
-</div>
+  <input
+    type="number"
+    class="input-text"
+    [ngClass]="age.touched && age.invalid ? 'input-text__inavlid' : ''"
+    placeholder="Age"
+    formControlName="age"
+  />
+  <div
+    class="invalid-message"
+    *ngIf="age.touched && age.invalid"
+  >
+    {{invalidAgeMessage()}}
+  </div>
+  <input
+    type="text"
+    class="input-text"
+    [ngClass]="email.touched && email.invalid ? 'input-text__inavlid' : ''"
+    placeholder="Email"
+    formControlName="email"
+  >
+  <div
+    class="invalid-message"
+    *ngIf="email.touched && email.invalid"
+  >
+    You must enter email
+  </div>
+  <input
+    type="password"
+    class="input-text"
+    [ngClass]="password.touched && password.invalid ? 'input-text__inavlid' : ''"
+    placeholder="Password"
+    formControlName="password"
+  />
+  <div
+    class="invalid-message"
+    *ngIf="password.touched && password.invalid"
+  >
+    {{invalidPsswordMessage()}}
+  </div>
+  <input
+    type="password"
+    class="input-text"
+    [ngClass]="passwordRepeated.touched && (passwordRepeated.invalid || subscribeForm.errors?.passwordnotrepeated) ? 'input-text__inavlid' : ''"
+    placeholder="Repeat on password"
+    formControlName="passwordRepeated"
+  />
+  <div
+    class="invalid-message"
+    *ngIf="passwordRepeated.touched && (passwordRepeated.invalid || subscribeForm.errors?.passwordnotrepeated)"
+  >
+    {{invalidPsswordRepeatedMessage()}}
+  </div>
+  <input
+    type="checkbox"
+    class="inline-block"
+    formControlName="terms"
+  >
+  <div class="inline-block">I read the terms</div>
+  <div
+    class="invalid-message"
+    *ngIf="terms.touched && terms.errors?.required === true"
+  >
+    You must sign the terms
+  </div>
+  <button
+    class="button-submit"
+    [disabled]="subscribeForm.invalid"
+  >
+    Submit
+  </button>
+</form>

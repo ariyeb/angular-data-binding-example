@@ -19,6 +19,7 @@ import { SubscribeFormComponent } from './components/subscribe-form/subscribe-fo
 import { RoomsComponent } from './components/rooms/rooms.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { UserEntranceComponent } from './components/user-entrance/user-entrance.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     SubscribeFormComponent,
     RoomsComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserEntranceComponent
   ],
   imports: [
     AppRoutingModule,

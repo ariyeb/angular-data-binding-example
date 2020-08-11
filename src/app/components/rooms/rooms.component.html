@@ -1,6 +1,6 @@
 <div class="container">
   <div class="section">
-    <div class="headline">rooms</div>
+    <div class="headline">Choose a room</div>
     <a
       *ngFor="let name of roomsNames"
       routerLink="/room/{{name}}"
@@ -10,5 +10,14 @@
   </div>
   <div class="section">
     <div class="headline">Create new room</div>
+    <input
+      type="text"
+      class="input-newroom"
+      #newroom
+    >
+    <button
+      class="button-newroom"
+      (click)="onClickButtonNewRoom(newroom.value)"
+    >Create</button>
   </div>
 </div>
