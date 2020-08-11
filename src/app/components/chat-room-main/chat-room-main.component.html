@@ -16,7 +16,7 @@
     <app-chat-room-message
       *ngFor="let message of messages; let i = index"
       [message]="message"
-      (delete)="onDeleteMessage(i)"
+      [index]="i"
     ></app-chat-room-message>
   </div>
   <app-chat-room-send-message></app-chat-room-send-message>

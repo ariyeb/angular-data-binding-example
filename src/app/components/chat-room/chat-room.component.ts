@@ -57,6 +57,7 @@ export class ChatRoomComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.roomName = params.get('name')
+      this.chatRoomService.initRoom(this.roomName)
     })
   }
 

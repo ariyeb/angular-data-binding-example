@@ -31,8 +31,8 @@ export class ChatRoomMainComponent implements OnInit {
   //   })
   // }
 
-  onDeleteMessage(index) {
-    this.messages.splice(index, 1);
-  }
+  // onDeleteMessage(index) {
+  //   this.messages.splice(index, 1);
+  // }
 
 }

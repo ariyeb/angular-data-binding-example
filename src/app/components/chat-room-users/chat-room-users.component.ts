@@ -17,7 +17,7 @@ export class ChatRoomUsersComponent implements OnInit {
   constructor(private chatRoomService: ChatRoomService) { }
 
   ngOnInit(): void {
-    this.users = this.chatRoomService.users
+    this.users = this.chatRoomService.getUsers()
     this.usersToDisplay = [...this.users]
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RoomsService } from 'src/app/services/rooms.service';
 
 @Component({
   selector: 'app-rooms',
@@ -7,13 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./rooms.component.css']
 })
 export class RoomsComponent implements OnInit {
-  roomsNames = [
-    "cats",
-    "toys"
-  ]
-  constructor(private router: Router) { }
+  roomsNames
+  constructor(private router: Router, private roomsService: RoomsService) { }
 
   ngOnInit(): void {
+    this.roomsNames = this.roomsService.getRoomsNames()
   }
 
   onClickButtonNewRoom(name) {

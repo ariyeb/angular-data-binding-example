@@ -10,7 +10,8 @@ import { ChatRoomService } from 'src/app/services/chat-room.service';
 export class ChatRoomMessageComponent implements OnInit {
   @Input() message: Message;
   // @Input() myUserId: string;
-  @Output() delete = new EventEmitter()
+  // @Output() delete = new EventEmitter()
+  @Input() index: number
   isMyMessage: boolean
   messageClass = ""
   myUserId: string
@@ -25,7 +26,8 @@ export class ChatRoomMessageComponent implements OnInit {
   }
 
   onClickDelete() {
-    this.delete.emit()
+    // this.delete.emit()
+    this.chatRoomService.deleteMessage(this.index)
   }
 
 }
