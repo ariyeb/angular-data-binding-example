@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Message } from 'src/app/models/message.model';
+import { ChatRoomService } from 'src/app/services/chat-room.service';
 
 @Component({
   selector: 'app-chat-room-message',
@@ -8,13 +9,15 @@ import { Message } from 'src/app/models/message.model';
 })
 export class ChatRoomMessageComponent implements OnInit {
   @Input() message: Message;
-  @Input() myUserId: string;
+  // @Input() myUserId: string;
   @Output() delete = new EventEmitter()
   isMyMessage: boolean
   messageClass = ""
-  constructor() { }
+  myUserId: string
+  constructor(private chatRoomService: ChatRoomService) { }
 
   ngOnInit(): void {
+    this.myUserId = this.chatRoomService.myUser.id
     this.isMyMessage = this.myUserId === this.message.user.id
     if (this.isMyMessage) {
       this.messageClass = 'my-message'

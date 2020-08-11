@@ -24,6 +24,10 @@ a {
   margin: 0 1rem;
 }
 
+.active-link {
+  color: #FFD166;
+}
+
 .header__nav__home {
   font-weight: 700;
 }

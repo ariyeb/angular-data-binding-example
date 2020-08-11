@@ -1,10 +1,14 @@
-<div class="chat-room">
+<!-- <div class="chat-room">
   <app-chat-room-users [users]="users"></app-chat-room-users>
   <app-chat-room-main
     [messages]="messages"
     [myUser]="myUser"
     [roomName]="roomName"
   ></app-chat-room-main>
+</div> -->
+<div class="chat-room">
+  <app-chat-room-users></app-chat-room-users>
+  <app-chat-room-main [roomName]="roomName"></app-chat-room-main>
 </div>
 
 <!--

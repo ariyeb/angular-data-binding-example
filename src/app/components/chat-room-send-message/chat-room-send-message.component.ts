@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ChatRoomService } from 'src/app/services/chat-room.service';
 
 @Component({
   selector: 'app-chat-room-send-message',
@@ -6,15 +7,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./chat-room-send-message.component.css']
 })
 export class ChatRoomSendMessageComponent implements OnInit {
-  @Output() newMessage = new EventEmitter<string>()
+  // @Output() newMessage = new EventEmitter<string>()
 
-  constructor() { }
+  constructor(private chatRoomService: ChatRoomService) { }
 
   ngOnInit(): void {
   }
 
   sendMessage(input) {
-    this.newMessage.emit(input.value)
+    // this.newMessage.emit(input.value)
+    this.chatRoomService.addMessage(input.value)
     input.value = ""
   }
 

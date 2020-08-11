@@ -17,12 +17,6 @@
   border: 1px solid #d90429;
 }
 
-.inline-block {
-  display: inline-block;
-  margin-top: 1rem;
-  margin-right: 0.5rem;
-}
-
 .button-submit {
   display: block;
   padding: 0.5rem;
@@ -37,11 +31,6 @@
   cursor: not-allowed;
 }
 
-.invalid-message {
-  color: #d90429;
-  font-size: 0.75rem;
-}
-
 .nav-container {
   padding-top: 1rem;
   display: flex;
@@ -51,4 +40,9 @@
 a {
   font-size: 0.75rem;
   align-self: flex-end;
+}
+
+.invalid-message {
+  color: #d90429;
+  font-size: 0.75rem;
 }

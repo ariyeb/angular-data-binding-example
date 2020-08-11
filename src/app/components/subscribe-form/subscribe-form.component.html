@@ -5,6 +5,7 @@
 />
 <button (click)="onClickButtonDefault()">default</button> -->
 
+<div class="headline">Subscribe</div>
 <form
   [formGroup]="subscribeForm"
   (ngSubmit)="onSubmitSubscribeForm()"
@@ -97,10 +98,13 @@
   >
     You must sign the terms
   </div>
-  <button
-    class="button-submit"
-    [disabled]="subscribeForm.invalid"
-  >
-    Submit
-  </button>
+  <div class="nav-container">
+    <button
+      class="button-submit"
+      [disabled]="subscribeForm.invalid"
+    >
+      Submit
+    </button>
+    <a routerLink="/user">Login</a>
+  </div>
 </form>

@@ -1,0 +1,64 @@
+<div class="headline">Login</div>
+<form
+  #loginForm="ngForm"
+  (ngSubmit)="onSubmit()"
+>
+  <input
+    type="text"
+    class="input-text"
+    [ngClass]="userName.touched && userName.invalid ? 'input-text__inavlid':''"
+    name="username"
+    [(ngModel)]="username"
+    #userName="ngModel"
+    placeholder="User name"
+    required
+  >
+  <div
+    *ngIf="userName.touched && userName.invalid"
+    class="invalid-message"
+  >
+    You must enter yours username
+  </div>
+  <input
+    type="email"
+    class="input-text"
+    [ngClass]="Email.touched && Email.invalid ? 'input-text__inavlid':''"
+    name="Email"
+    [(ngModel)]="email"
+    #Email="ngModel"
+    placeholder="Email"
+    required
+  >
+  <div
+    *ngIf="Email.touched && Email.invalid"
+    class="invalid-message"
+  >
+    You must enter yours username
+  </div>
+  <input
+    type="password"
+    class="input-text"
+    [ngClass]="Password.touched && Password.invalid ? 'input-text__inavlid':''"
+    name="password"
+    [(ngModel)]="password"
+    #Password="ngModel"
+    placeholder="Password"
+    required
+  >
+  <div
+    *ngIf="Password.touched && Password.invalid"
+    class="invalid-message"
+  >
+    You must enter yours username
+  </div>
+  <div class="nav-container">
+    <button
+      type="submit"
+      class="button-submit"
+      [disabled]="loginForm.invalid"
+    >
+      Submit
+    </button>
+    <a routerLink="/user/subscribe">New user - subscribe</a>
+  </div>
+</form>
