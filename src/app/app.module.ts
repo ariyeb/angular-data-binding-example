@@ -17,6 +17,8 @@ import { PrivateMessageComponent } from './components/private-message/private-me
 import { NgmodelFormComponent } from './components/ngmodel-form/ngmodel-form.component';
 import { SubscribeFormComponent } from './components/subscribe-form/subscribe-form.component';
 import { RoomsComponent } from './components/rooms/rooms.component';
+import { HomeComponent } from './components/home/home.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { RoomsComponent } from './components/rooms/rooms.component';
     PrivateMessageComponent,
     NgmodelFormComponent,
     SubscribeFormComponent,
-    RoomsComponent
+    RoomsComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     AppRoutingModule,
