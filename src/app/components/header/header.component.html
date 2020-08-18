@@ -8,17 +8,18 @@
       Home
     </a>
     <div>
-      <a
-        routerLink="/rooms"
-        routerLinkActive="active-link"
-      >
+      <a routerLink="/rooms" routerLinkActive="active-link">
         Rooms
       </a>
       <a
-        routerLink="/ "
+        *ngIf="!isuserLogged"
+        routerLink="/user"
         routerLinkActive="active-link"
       >
         Login
+      </a>
+      <a *ngIf="isuserLogged" (click)="onClickLogout()">
+        Logout
       </a>
     </div>
   </div>

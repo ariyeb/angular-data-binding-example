@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ApiResult } from '../models/apiResult.model';
 import { environment } from 'src/environments/environment';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
   private _myUser: User | null
   private _token: string
+  private _isUserLogged = new Subject<boolean>()
+  isUseLogged = this._isUserLogged.asObservable()
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -20,6 +23,7 @@ export class LoginService {
 
   private setMyUser(userName: string, id: string) {
     this._myUser = { userName, id }
+    this._isUserLogged.next(true)
   }
 
   get token() {
@@ -61,6 +65,7 @@ export class LoginService {
   logout() {
     this._token = ""
     this._myUser = null
+    this._isUserLogged.next(false)
     this.router.navigate(['/home'])
   }
 }
