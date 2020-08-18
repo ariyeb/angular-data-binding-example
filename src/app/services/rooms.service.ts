@@ -3,8 +3,9 @@ import { Room } from '../models/room.model';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class RoomsService {
   roomsNames = this._roomsNamesSubject.asObservable()
   private dbUrl = environment.DB + '/rooms.json'
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private loginService: LoginService) {
     // this._rooms = [
     //   {
     //     name: 'cats',
@@ -90,7 +91,8 @@ export class RoomsService {
 
   getRooms() {
     this.http.get(
-      this.dbUrl
+      this.dbUrl,
+      { params: new HttpParams().set('auth', this.loginService.token) }
     ).subscribe(
       (res) => {
         // console.log(res)
@@ -120,7 +122,8 @@ export class RoomsService {
     // this._roomsNamesSubject.next(this._rooms.map(room => room.name))
     this.http.post(
       this.dbUrl,
-      { name, users: [] }
+      { name, users: [] },
+      { params: new HttpParams().set('auth', this.loginService.token) }
     ).subscribe(
       (res) => {
         this.roomsNames.pipe(take(1)).subscribe(() => {

@@ -42,4 +42,25 @@ export class LoginService {
     )
   }
 
+  signin(userName: string, email: string, password: string) {
+    this.http.post<ApiResult>(
+      environment.FIREBASE_SIGNIN,
+      { email, password, returnSecureToken: true }
+    ).subscribe(
+      (res) => {
+        this._token = res.idToken
+        this.setMyUser(userName, res.localId)
+        this.router.navigate(['/rooms'])
+      },
+      (err) => {
+        console.log(err)
+      }
+    )
+  }
+
+  logout() {
+    this._token = ""
+    this._myUser = null
+    this.router.navigate(['/home'])
+  }
 }
