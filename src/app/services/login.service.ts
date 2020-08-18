@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ApiResult } from '../models/apiResult.model';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,8 @@ export class LoginService {
   private _token: string
   private _isUserLogged = new Subject<boolean>()
   isUseLogged = this._isUserLogged.asObservable()
+  private _unAuthMessage = new BehaviorSubject<string>('')
+  unAuthMessage = this._unAuthMessage.asObservable()
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -28,6 +30,10 @@ export class LoginService {
 
   get token() {
     return this._token
+  }
+
+  sendUnAuthMessage(message: string) {
+    this._unAuthMessage.next(message)
   }
 
   signup(userName: string, email: string, password: string) {

@@ -17,6 +17,7 @@ export class LoginGuard implements CanActivate {
       return true
     }
 
+    this.loginService.sendUnAuthMessage('You must login to enter chat rooms.')
     return this.router.createUrlTree(['/user'])
   }
 

@@ -1,4 +1,5 @@
 <div class="headline">Login</div>
+<div *ngIf="unAuthMessage !== ''">{{ unAuthMessage }}</div>
 <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
   <input
     type="text"
