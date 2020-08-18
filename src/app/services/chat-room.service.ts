@@ -89,5 +89,7 @@ export class ChatRoomService {
     console.log(index)
     this._messagesSubject.next([...this._messages])
   }
+
+ 
 }
 
