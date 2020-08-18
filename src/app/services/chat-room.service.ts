@@ -4,13 +4,15 @@ import { Message } from '../models/message.model';
 import { Subject } from 'rxjs';
 import { Room } from '../models/room.model';
 import { RoomsService } from './rooms.service';
+import { LoginService } from './login.service';
 
 @Injectable()
 export class ChatRoomService {
-  private _myUser: User = {
-    userName: 'Ariye',
-    id: '11'
-  }
+  // private _myUser: User = {
+  //   userName: 'Ariye',
+  //   id: '11'
+  // }
+  private _myUser: User
   private _room: Room
 
   // private _users: User[] = [
@@ -52,7 +54,10 @@ export class ChatRoomService {
   private _messagesSubject = new Subject<Message[]>()
   messagesData = this._messagesSubject.asObservable()
 
-  constructor(private roomsService: RoomsService) {
+  constructor(
+    private roomsService: RoomsService,
+    private loginService: LoginService
+  ) {
 
   }
 
@@ -73,6 +78,7 @@ export class ChatRoomService {
 
   initRoom(roomName) {
     this._room = this.roomsService.getRoom(roomName)
+    this._myUser = this.loginService.myUser
   }
 
   addMessage(message: string) {
@@ -90,6 +96,6 @@ export class ChatRoomService {
     this._messagesSubject.next([...this._messages])
   }
 
- 
+
 }
 

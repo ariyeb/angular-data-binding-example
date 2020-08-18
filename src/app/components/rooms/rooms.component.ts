@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./rooms.component.css']
 })
 export class RoomsComponent implements OnInit, OnDestroy {
-  roomsNames
+  roomsNames = []
   roomsNamesSub: Subscription
   constructor(private router: Router, private roomsService: RoomsService) { }
 
@@ -29,7 +29,7 @@ export class RoomsComponent implements OnInit, OnDestroy {
   onClickButtonNewRoom(name) {
     // this.roomsNames.push(name)
     this.roomsService.createNewRoom(name)
-    this.router.navigate(['/room', name])
+    // this.router.navigate(['/room', name])
   }
 
 }

@@ -2,7 +2,9 @@ import { Injectable } from "@angular/core";
 import { Room } from '../models/room.model';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class RoomsService {
   roomsNames = this._roomsNamesSubject.asObservable()
   private dbUrl = environment.DB + '/rooms.json'
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     // this._rooms = [
     //   {
     //     name: 'cats',
@@ -118,6 +120,17 @@ export class RoomsService {
     // this._roomsNamesSubject.next(this._rooms.map(room => room.name))
     this.http.post(
       this.dbUrl,
+      { name, users: [] }
+    ).subscribe(
+      (res) => {
+        this.roomsNames.pipe(take(1)).subscribe(() => {
+          this.router.navigate(['/room', name])
+        })
+        this.getRooms()
+      },
+      (err) => {
+        console.log(err)
+      }
     )
 
     // 1 לשלוח את החדר החדש אל הדאטהבייס

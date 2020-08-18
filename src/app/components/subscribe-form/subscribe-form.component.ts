@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, AbstractControl, Validators, FormBuilder, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-subscribe-form',
@@ -18,7 +19,7 @@ export class SubscribeFormComponent implements OnInit {
   passwordRepeated
   terms
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
     // this.subscribeForm = new FormGroup({
@@ -126,10 +127,11 @@ export class SubscribeFormComponent implements OnInit {
   }
 
   onSubmitSubscribeForm() {
+    if (this.subscribeForm.valid) {
+      this.loginService.signup(this.firstName.value, this.email.value, this.password.value)
+    }
     // console.log(this.subscribeForm.get('lastName').value)
-    this.router.navigate(['/rooms'])
+    // this.router.navigate(['/rooms'])
   }
-
-  // ng serve --liveReload=false
 
 }
